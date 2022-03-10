@@ -1,0 +1,17 @@
+version: '3.7'
+
+
+services:
+  nps:
+    restart: always
+    image: whatwewant/npc:${SERVICE_NPS_VERSION}
+    network_mode: host
+    environment:
+      TZ: Asia/Shanghai
+      SERVER: ${SERVICE_NPC_SERVER}
+      KEY: ${SERVICE_NPC_KEY}
+
+networks:
+  default:
+    external: true
+    name: compose-ingress
