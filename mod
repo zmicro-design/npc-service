@@ -1,3 +1,3 @@
 NAME=npc
-VERSION=v0.0.0
+VERSION=v1.0.0
 DESCRIPTION="NPC Service(NPS Client)"
