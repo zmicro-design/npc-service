@@ -1,11 +1,11 @@
 version: '3.7'
 
-
 services:
-  nps:
+  npc:
     restart: always
     image: whatwewant/npc:${SERVICE_NPS_VERSION}
-    network_mode: host
+    # network_mode: host
+    # network_mode: bridge
     environment:
       TZ: Asia/Shanghai
       SERVER: ${SERVICE_NPC_HOST}:${SERVICE_NPC_PORT}
