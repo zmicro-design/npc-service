@@ -8,9 +8,14 @@ check() {
   fi
   config::load_file $SERVICE_CONFIG
 
-  if [ -z "$SERVICE_NPC_SERVER" ]; then
-    inquirer::text "请输入 SERVICE_NPC_SERVER:" value
-    config::set SERVICE_NPC_SERVER $value $SERVICE_CONFIG
+  if [ -z "$SERVICE_NPC_HOST" ]; then
+    inquirer::text "请输入 SERVICE_NPC_HOST:" value
+    config::set SERVICE_NPC_HOST $value $SERVICE_CONFIG
+  fi
+
+   if [ -z "$SERVICE_NPC_PORT" ]; then
+    inquirer::text "请输入 SERVICE_NPC_PORT:" value
+    config::set SERVICE_NPC_PORT $value $SERVICE_CONFIG
   fi
 
   if [ -z "$SERVICE_NPC_KEY" ]; then
@@ -22,7 +27,8 @@ check() {
   config::load_file $SERVICE_CONFIG
   
   # @TODO
-  export SERVICE_NPC_SERVER=$SERVICE_NPC_SERVER
+  export SERVICE_NPC_HOST=$SERVICE_NPC_HOST
+  export SERVICE_NPC_PORT=$SERVICE_NPC_PORT
   export SERVICE_NPC_KEY=$SERVICE_NPC_KEY
 }
 

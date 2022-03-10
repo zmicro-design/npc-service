@@ -8,7 +8,7 @@ services:
     network_mode: host
     environment:
       TZ: Asia/Shanghai
-      SERVER: ${SERVICE_NPC_SERVER}
+      SERVER: ${SERVICE_NPC_HOST}:${SERVICE_NPC_PORT}
       KEY: ${SERVICE_NPC_KEY}
 
 networks:
